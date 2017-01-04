@@ -1,0 +1,88 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "norms": false
+      },
+      "_meta": {
+        "version": "6.0.0-alpha1"
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "ignore_above": 1024,
+              "type": "text"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "type": "text"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "type": "text"
+            },
+            "version": {
+              "ignore_above": 1024,
+              "type": "text"
+            }
+          }
+        },
+        "counter": {
+          "type": "long"
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                },
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "type": "text"
+                }
+              }
+            }
+          }
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "type": "text"
+        }
+      }
+    }
+  },
+  "order": 0,
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "apachebeat-*"
+}

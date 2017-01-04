@@ -1,0 +1,5 @@
+= Apachebeat Docs
+
+Welcome to the Apachebeat documentation.
+
+
