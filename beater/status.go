@@ -39,11 +39,10 @@ func (ab *Apachebeat) GetServerStatus(u url.URL) (common.MapStr, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", u.String()+AUTO_STRING, nil)
 
-    
 	if ab.auth {
 		req.SetBasicAuth(ab.username, ab.password)
 	}
-    
+
 	res, err := client.Do(req)
 
 	if err != nil {
